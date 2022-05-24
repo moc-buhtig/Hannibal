@@ -7,7 +7,7 @@ import time
 pyautogui.PAUSE = 0
 def get_board():
     t = time.time()
-    pyautogui.moveTo(1342, 193)
+    pyautogui.moveTo(1281, 188)
     pyautogui.click()
     pyautogui.hotkey('ctrl', 'c')
     coldic = {'red': 'RE', 'lightblue': 'LB', 'purple': 'PU', 'green': 'GR', 'pink': 'PN', 'orange': 'OG', 'maroon': 'MR', 'teal': 'TL', 'yellow': 'YL', 'brown': 'BR', 'blue': 'BL', 'purpleblue': 'PB', '': ''}
@@ -63,12 +63,13 @@ def get_board():
                 name = 'g'
                 owner = coldic[namel[0]]
             if namel == ['']:
-                name = '_'
+                name = 'n'
             current_line.append([owner, name, number])
         if html[i:].startswith('</tr>'):
             lines.append(current_line)
             current_line = []
     return lines, False
+print(get_board())
 def move_space(startx, starty, direction, board, g_c):
     for a, l in enumerate(board):
         for b, m in enumerate(l):
