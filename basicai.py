@@ -1,3 +1,5 @@
+# Sup
+
 import time
 import random
 def get_move(gc, board):
