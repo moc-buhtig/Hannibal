@@ -96,5 +96,14 @@ def move_square(start_coords, end_coords, board, color):
     return path
 
 
-directions = move_square((6, 7), (18, 16), test_board, 'RE')
-print(convert_pathfinder_to_directional(directions))
+
+# TODO: We need a move queue strategy, or a "mode" variable (Peaceful, Attacking General, Defending, Expanding, Grabbing Army)
+
+# Maybe we could also have a Move class (probably unnecessary)
+# We also need a queue system (a list of moves) that resets when the mode changes
+# It could be "targeting" an expansion, and we have a function that generates moves for the mode
+# also a function that detects its situation, and changes the mode accordingly.
+
+# Test code: 
+# directions = move_square((6, 7), (18, 16), test_board, 'RE')
+# print(convert_pathfinder_to_directional(directions))
